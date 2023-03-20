@@ -2,5 +2,6 @@ package android.training.notepadwithjetpackcompose.feature_note.data.domain.use_
 
 data class NoteUseCases(
     val getNotes: GetNotes,
-    val deleteNote: DeleteNote
+    val deleteNote: DeleteNote,
+    val addNote: AddNote
 )
