@@ -4,6 +4,7 @@ import android.app.Application
 import android.training.notepadwithjetpackcompose.feature_note.data.data_source.NoteDao
 import android.training.notepadwithjetpackcompose.feature_note.data.data_source.NoteDatabase
 import android.training.notepadwithjetpackcompose.feature_note.data.domain.repository.NoteRepository
+import android.training.notepadwithjetpackcompose.feature_note.data.domain.use_case.AddNote
 import android.training.notepadwithjetpackcompose.feature_note.data.domain.use_case.DeleteNote
 import android.training.notepadwithjetpackcompose.feature_note.data.domain.use_case.GetNotes
 import android.training.notepadwithjetpackcompose.feature_note.data.domain.use_case.NoteUseCases
@@ -40,7 +41,8 @@ object AppModule {
     fun provideNoteUseCases(repository: NoteRepository) : NoteUseCases{
         return NoteUseCases(
             getNotes = GetNotes(repository),
-            deleteNote = DeleteNote(repository)
+            deleteNote = DeleteNote(repository),
+            addNote = AddNote(repository)
         )
     }
 
